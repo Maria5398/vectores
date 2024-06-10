@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define tam 100
+
+void numerosAleatorios(int[], int, int );
+void mostar(int [], int);
+int mayor(int[],int );
+void mostrarPosicionesRepetidas(int[],int, int);
+int main()
+{
+    int vec[tam], max=42;
+    numerosAleatorios(vec, tam, 100 );
+    mostar(vec, tam);
+    max = mayor(vec, tam);
+
+    printf("el mayor es %d \n", max);
+
+    mostrarPosicionesRepetidas(vec,max, tam);
+
+
+    return 0;
+}
+
+void numerosAleatorios(int vec[], int cc, int i)
+{
+
+    printf("numeros aleatorios \n");
+
+    for(i=0;i<cc;i++)
+    {
+        vec[i] = rand()%cc;
+    }
+
+}
+void mostar(int vec[], int cc)
+{
+    int i;
+    for(i=0;i<cc;i++)
+        printf("%d %d \n", i, vec[i] );
+}
+int mayor(int vec[], int cc)
+{
+    int i, max = vec[0];
+    for(i=1;i<cc;i++)
+        if(max < vec[i])
+            max=vec[i];
+    return max;
+}
+void mostrarPosicionesRepetidas(int vec[],int mayy, int cc)
+{
+    int i;
+    for(i=0;i<cc;i++)
+
+        if(mayy==vec[i])
+            printf("se repite EN :%d \n", i);
+
+}
+
+
+
+
+
+
