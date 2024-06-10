@@ -1,0 +1,86 @@
+#include <stdio.h>
+
+void mostrarPedidos(int[], int);
+void cargarCodigo(int[], int);
+int leerEntero(int, int)
+void cargarCodigo(int[], int)
+
+int main()
+{
+    int vecPedidos[10]={0};
+    int vecCodigos[10];
+    
+    cargarPedido(vecPedidos);
+    mostrarPedidos(vecPedidos, 10);
+    return 0;
+}
+
+void cargarPedido(int vp[])
+{
+    int cod, cant;
+    do
+    {
+        printf("Ingrese el codigo de producto:");
+        scanf("%d", &cod);
+    }while (cod <0 || cod >10);
+
+    while(cod!=0)
+    {
+        do
+        {
+            printf("Ingrese la cantidad de productos del pedido:");
+            scanf("%d", &cant);
+        }while (cant<=0);
+
+
+        vp[cod-1]+=cant;
+
+        do
+        {
+            printf("Ingrese el codigo de producto:");
+            scanf("%d", &cod);
+        }while (cod <0 || cod >10);
+    }
+
+}
+
+void mostrarPedidos(int vp[], int ce)
+{
+    int i;
+    printf("CODIGO CANTIDAD");
+    for (i=0;i<ce;i++)
+        printf("\n%6d %8d", i+1, vp[i] );
+}
+
+void cargarCodigo(int vc[], int ce)
+{
+    int i, pos; 
+    printf("ingrese codigos de inicio de productos");
+    
+    for(i=0;i<ce;i++)
+    {
+        do
+        {
+            
+        }
+    }
+    
+}
+
+int leerEntero(int li, int ls)
+{
+    int num, error=0;
+    do //0 es falso y 1 es verdadero 
+    {
+        if(error)
+        {
+            printf("valor incorrecto");
+        }
+        printf("ingrese un valor que este entre %d y %d", li , ls);
+        scanf("%d",&num);
+        error = 1;
+    }while(num<li || num>ls);//eneste caso arriba en main podemos poner , desiganas los limites superiores e inferiores
+    // EN ESTE CASO SERIA 1000 Y 9999
+    return num;
+    
+}
