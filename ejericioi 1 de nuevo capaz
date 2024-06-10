@@ -1,0 +1,48 @@
+#include <stdio.h>
+void cargarPedido(int[]);
+void mostrarPedidos(int[], int);
+
+int main()
+{
+    int vecPedidos[10]={0};
+    cargarPedido(vecPedidos);
+    mostrarPedidos(vecPedidos, 10);
+    return 0;
+}
+
+void cargarPedido(int vp[])
+{
+    int cod, cant;
+    do
+    {
+        printf("Ingrese el codigo de producto:");
+        scanf("%d", &cod);
+    }while (cod <0 || cod >10);
+
+    while(cod!=0)
+    {
+        do
+        {
+            printf("Ingrese la cantidad de productos del pedido:");
+            scanf("%d", &cant);
+        }while (cant<=0);
+
+
+        vp[cod-1]+=cant;
+
+        do
+        {
+            printf("Ingrese el codigo de producto:");
+            scanf("%d", &cod);
+        }while (cod <0 || cod >10);
+    }
+
+}
+
+void mostrarPedidos(int vp[], int ce)
+{
+    int i;
+    printf("CODIGO CANTIDAD");
+    for (i=0;i<ce;i++)
+        printf("\n%6d %8d", i+1, vp[i] );
+}
