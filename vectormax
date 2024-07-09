@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #define tam 100
-
+/// de prueba
 void numerosAleatorios(int[], int, int );
 void mostar(int [], int);
 int mayor(int[],int );
